@@ -2,7 +2,7 @@ from requests import get
 from pprint import PrettyPrinter
 
 base_url = 'https://api.currencyapi.com'
-API_KEY = 'cur_live_RxcC9qL51N4gx0Pa5vqKdoGvmn17F9fhsDgTdt8h'
+API_KEY = 'YOUR API'
 printer = PrettyPrinter()
 
 
