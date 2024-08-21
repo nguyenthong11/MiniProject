@@ -4,6 +4,7 @@ from SiteStatusCheck import check_url
 import Morse_code
 from CurrencyConvert import GetCurrencies, print_currencies, exchange_rate, convert
 
+
 def main() -> None:
     while True:
         print('\n1. Income computation')
