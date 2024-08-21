@@ -2,15 +2,15 @@ from Finance import finance
 from WordCount import word_count
 from SiteStatusCheck import check_url
 import Morse_code
-
+from CurrencyConvert import GetCurrencies, print_currencies, exchange_rate, convert
 
 def main() -> None:
     while True:
         print('\n1. Income computation')
         print('2. Check URL status')
         print('3. Words count')
-        print('4. Morse code converse ')
-        print('5. in coming ...')
+        print('4. Morse code convert')
+        print('5. Currency rate convert')
         print('q. Exit')
         choice = input("Enter your choice: ")
         if choice == '1':
@@ -36,7 +36,7 @@ def main() -> None:
                 else:
                     print("Invalid choice")
         elif choice == '5':
-            pass
+            exec(open("CurrencyConvert.py").read())
         elif choice == 'q':
             print('Exiting...')
             break
