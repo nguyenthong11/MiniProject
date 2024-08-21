@@ -24,29 +24,29 @@ def print_currencies() -> None:
         print(f'{_id} - {name} - {symbol}')
 
 
-def exchange_rate(currency1, currency2):
+def exchange_rate(currency1, currency2) -> float:
     endpoint = f'/v3/latest?apikey={API_KEY}&currencies={currency2}&base_currency={currency1}'
     url = base_url + endpoint
     response = get(url).json()
     error = response.get('errors', None)
     if error:
         print('Invalid currency')
-        return
+        return 0
     rate = list(response['data'].values())[0]['value']
     print(f'{currency1} -> {currency2} is {rate}')
     return rate
 
 
-def convert(currency1, currency2, amount):
+def convert(currency1, currency2, amount) -> float:
     rate = exchange_rate(currency1, currency2)
 
     if rate is None:
-        return
+        return 0
     try:
         amount = float(amount)
     except:
         print("Invalid amount")
-        return
+        return 0
 
     converted_amount = rate*amount
     print(f'{amount} {currency1} is equal to {converted_amount} {currency2}')
